@@ -16,5 +16,4 @@ const permissionSlice = createSlice({
   reducers: {},
 })
 
-export const {} = permissionSlice.actions
 export default permissionSlice.reducer
