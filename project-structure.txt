@@ -1,0 +1,47 @@
+﻿F:\2026\web
+|-- .vscode
+|   \-- settings.json
+|-- app
+|   |-- (protected)
+|   |   |-- users
+|   |   |   \-- page.tsx
+|   |   |-- error.tsx
+|   |   |-- layout.tsx
+|   |   \-- loading.tsx
+|   |-- (public)
+|   |   |-- login
+|   |   |   \-- page.tsx
+|   |   \-- page.tsx
+|   |-- api
+|   |   |-- auth
+|   |   |   \-- route.tsx
+|   |   \-- posts
+|   |       \-- route.tsx
+|   |-- favicon.ico
+|   |-- globals.css
+|   |-- layout.tsx
+|   |-- page.tsx
+|   \-- providers.tsx
+|-- components
+|   \-- layout
+|       \-- AdminLayout.tsx
+|-- public
+|   |-- file.svg
+|   |-- globe.svg
+|   |-- next.svg
+|   |-- vercel.svg
+|   \-- window.svg
+|-- .gitignore
+|-- eslint.config.mjs
+|-- gen-tree.ps1
+|-- middleware.ts
+|-- next.config.ts
+|-- next-env.d.ts
+|-- nextjs-architecture.md
+|-- package.json
+|-- pnpm-lock.yaml
+|-- pnpm-workspace.yaml
+|-- postcss.config.mjs
+|-- project-structure.txt
+|-- README.md
+\-- tsconfig.json
