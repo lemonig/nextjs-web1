@@ -41,3 +41,16 @@ export interface ProductInsertParams {
 export interface ProductUpdateParams extends ProductInsertParams {
   id: string | number
 }
+
+export interface ProductFormValues {
+  name: string
+  brand?: string
+  price?: number
+  [prop: string]: unknown
+}
+
+export interface ProductImportParams {
+  categoryId: string | number
+  filePath: string
+  [prop: string]: unknown
+}

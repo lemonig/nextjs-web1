@@ -72,3 +72,24 @@ export interface QuotationDetailPriceUpdateParams {
   quotationId: string | number
   [prop: string]: unknown
 }
+
+export interface QuotationFormValues {
+  project: string
+  organization: string
+  expiryDate?: string
+  contractDetail?: string
+  description?: string
+  playerId?: string
+  attachment?: QuotationAttachment
+  [prop: string]: unknown
+}
+
+export interface QuotationDetailFormValues {
+  productId: string | number
+  number?: number
+  community?: string
+  remarks?: string
+  serial?: string
+  verificationCode?: string
+  [prop: string]: unknown
+}
