@@ -8,6 +8,17 @@ import type { ApiResponse } from './types'
 
 const baseURL = process.env.NEXT_PUBLIC_API_BASE ?? '/api'
 
+const NO_AUTH_URLS = [
+  'api/sso/getSsoAuthUrl',
+  'api/sso/doLoginByTicket',
+]
+
+function isNoAuthUrl(url = ''): boolean {
+  return (
+    NO_AUTH_URLS.some((u) => url.includes(u)) || url.includes('assets/')
+  )
+}
+
 export const instance: AxiosInstance = axios.create({
   baseURL,
   timeout: 15000,
@@ -18,9 +29,11 @@ export const instance: AxiosInstance = axios.create({
 
 instance.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    const token = getToken()
-    if (token) {
-      config.headers.set('token', token)
+    if (!isNoAuthUrl(config.url)) {
+      const token = getToken()
+      if (token) {
+        config.headers.set('token', token)
+      }
     }
     return config
   },
@@ -44,10 +57,6 @@ instance.interceptors.response.use(
         window.location.href = '/403'
       }
       return Promise.reject(new Error(res.message || '无权限'))
-    }
-
-    if (!res.success) {
-      return Promise.reject(new Error(res.message || '请求失败'))
     }
 
     return response

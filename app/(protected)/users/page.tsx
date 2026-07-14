@@ -1,3 +1,5 @@
-export default function UsersPage() {
-  return null
+import UserPage from '@/features/users/UserPage'
+
+export default function Page() {
+  return <UserPage />
 }
